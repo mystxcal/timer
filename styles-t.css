@@ -1,0 +1,140 @@
+:root {  
+    user-select: none;
+    --op:0;
+    --timer: ;
+    --bgimg: ;
+    --bgcolor: rgb(201, 201, 201);
+    --primary: rgb(0, 0, 0);
+    --secondary: ;  
+    /* --bgi: url("https://cdn.shopify.com/s/files/1/0011/6005/2795/files/169_753a7e43-dbc4-49af-b996-0c7daf166d00.png?v=1631394642") */
+  }
+
+.light {
+    --bgcolor: rgb(201, 201, 201);
+    --primary: rgb(0, 0, 0);
+}
+.dark {
+    --bgcolor: rgb(2, 0, 97);
+    --primary: rgb(178, 176, 255);
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bgcolor);
+    color: var(--primary);
+    font-family: 'Patrick Hand', cursive;
+    background-image: var(--bgi);
+    background-size: cover;
+    text-shadow:  0px 2px 2px #212121;
+    opacity: 0.7;
+}
+#header {
+    position: fixed;
+    top: 0;
+    padding-top: 1vh;
+    font-size: larger;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+#time {
+    font-size: 35vmin;
+    
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+    width: 80vmin;
+}
+#headerbtns{
+    /* border: 2px solid var(--primary); */
+    background-color: var(--bgcolor);
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+    
+}
+#headerbtns:hover {
+    color: var(--bgcolor);
+    background-color: var(--primary);
+    
+}
+button {
+    /* border: 3px solid var(--primary); */
+    border: none;
+    background: none;
+    color: var(--primary);
+    padding: 1.5vmin 1.5vmin;
+    font-size: 4.5vmin;
+    /* border-radius: 3vmin; */
+    text-decoration: underline; 
+    width: auto;
+    /* box-shadow: 0px 3px 10px 0px var(--primary); */
+    font-family: 'Patrick Hand', cursive;
+    text-shadow:  0px 2px 2px #212121;
+}
+button:hover{
+    /* color: var(--bgcolor);
+    background-color: var(--primary); */
+    transform:scale(1.2) ;
+}
+form {
+    display: inline;
+}
+
+input::placeholder {
+    color: black
+}
+
+input{
+    border: 2px solid var(--primary);
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    width: 10vmin;
+}
+
+#pie {
+    
+    --p: 0;
+    --b: 5vmin;
+    --piecolor: ;
+    width: 80vmin;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5vmin #212121;
+    aspect-ratio: 1;
+    /* color: blueviolet; */
+    opacity: var(--op);
+    z-index: -100;
+    
+    
+}
+
+#pie::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    inset:0;
+    background: conic-gradient(var(--primary), calc(var(--p)*1%),#0000 0);
+   
+}
