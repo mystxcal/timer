@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles-t.css"/>
+        <script type="text/javascript" src="scripts-t.js"></script>
+        <title>Timer</title>
+    </head>
+    
+    <body onload="init(expiry)">
+        <div id="header">
+            theme: 
+            <span id="headerbtns" onclick="changeTheme('light')">light</span>
+            <span id="headerbtns" onclick="changeTheme('dark')">dark</span>
+            <span id="headerbtns" onclick="changeTheme('ambient-blue')">ambient-blue</span>
+            | duration: 
+            <span id="headerbtns" onclick="changeD(0.5)">30s</span>
+            <span id="headerbtns" onclick="changeD(1)">1m</span>
+            <span id="headerbtns" onclick="changeD(2)">2m</span>
+            <span id="headerbtns" onclick="changeD(5)">5m</span>
+            <span id="headerbtns" onclick="changeD(10)">10m</span>
+            <span id="headerbtns" onclick="changeD(15)">15m</span>
+            <span id="headerbtns" onclick="changeD(30)">30m</span>
+            <span id="headerbtns" onclick="changeD(60)">1hr</span>
+            <span id="headerbtns" onclick="changeD(120)">2hr</span>
+            <span>
+                <form onsubmit="changeD(document.getElementsByClassName('durninp')[0].value );return false">
+                    <input  class="durninp" type="text" name="durn" id="durn" placeholder="X minutes" >
+                    <!-- <input id="headerbtns" type="submit"> -->
+                </form>
+            </span>
+            | size: 
+            <span id="headerbtns" onclick="changeFS('25vmin')">small</span>
+            <span id="headerbtns" onclick="changeFS('35vmin')">regular</span>
+            <span id="headerbtns" onclick="changeFS('45vmin')">large</span>
+            | <span id="headerbtns" onclick="toggleClock()">toggle clock</span>    
+        </div>
+       
+        <div id="time">
+            <span id="h">00:</span><span id="m">00:</span><span id="s">00</span>
+        </div>
+
+        <div id="controls">
+            <!-- <button onclick="startTimer(expiry)">test</button> -->
+            <button id="togglebtn" onclick="toggleTimer(expiry)">start</button>
+            <button onclick="resetTimer(expiry)">reset</button>
+        </div>
+
+        <div id="pie"></div>
+
+    </body>
+
+</html>
